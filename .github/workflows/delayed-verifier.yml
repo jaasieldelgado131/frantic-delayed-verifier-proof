@@ -1,0 +1,34 @@
+name: Delayed verifier
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run verifier state transition
+        run: node scripts/run-verifier.mjs
+      - name: Commit timestamped evidence
+        run: |
+          git config user.name "frantic-verifier[bot]"
+          git config user.email "frantic-verifier[bot]@users.noreply.github.com"
+          git add public/evidence.json public/report.md
+          git diff --cached --quiet || git commit -m "record verifier state transition"
+          git push
+      - name: Upload evidence snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: delayed-verifier-evidence
+          path: |
+            public/artifact.json
+            public/evidence.json
+            public/report.md
+

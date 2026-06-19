@@ -7,6 +7,10 @@ The public artifact is intentionally static. The evidence packet records only
 timestamps returned by Frantic or committed by GitHub; it does not synthesize
 browser-relative timestamps.
 
+The `Delayed verifier` GitHub Actions workflow executes the blocking
+`url.live` contract. A run before `run_after` records the real waiting state; a
+separate run after the window records the post-window recheck.
+
 ## Public artifacts
 
 - `public/artifact.json`: stable target for the delayed `url.live` check.

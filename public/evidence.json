@@ -9,7 +9,7 @@
       "id": "delayed-live-recheck",
       "uses": "url.live",
       "execution": "delayed",
-      "run_after": "2026-06-19T18:44:05.767Z",
+      "run_after": "2026-06-19T18:46:00.000Z",
       "blocks_acceptance": true,
       "with": {
         "url": "https://raw.githubusercontent.com/jaasieldelgado131/frantic-delayed-verifier-proof/main/public/artifact.json"
@@ -27,8 +27,14 @@
       "at": "2026-06-19T18:32:09.728Z",
       "source": "local sanitized response capture",
       "verification": null
+    },
+    {
+      "kind": "initial_delivery",
+      "at": "2026-06-19T18:36:17.606Z",
+      "source": "Frantic public bounty event",
+      "delivery_ref": "frantic:delivery:54ec2cc8-61f5-4c27-bb05-f98d4d51f86b"
     }
   ],
-  "status": "awaiting_initial_delivery",
+  "status": "awaiting_verifier_run",
   "final_receipt_ref": null
 }
