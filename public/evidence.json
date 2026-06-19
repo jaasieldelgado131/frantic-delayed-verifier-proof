@@ -33,8 +33,24 @@
       "at": "2026-06-19T18:36:17.606Z",
       "source": "Frantic public bounty event",
       "delivery_ref": "frantic:delivery:54ec2cc8-61f5-4c27-bb05-f98d4d51f86b"
+    },
+    {
+      "kind": "immediate_pass",
+      "checked_at": "2026-06-19T18:39:53.757Z",
+      "response_date": "Fri, 19 Jun 2026 18:39:53 GMT",
+      "url": "https://raw.githubusercontent.com/jaasieldelgado131/frantic-delayed-verifier-proof/main/public/artifact.json",
+      "http_status": 200,
+      "passed": true
+    },
+    {
+      "kind": "scheduled_waiting",
+      "observed_at": "2026-06-19T18:39:53.757Z",
+      "status": "waiting",
+      "run_after": "2026-06-19T18:46:00.000Z",
+      "blocks_acceptance": true,
+      "reason": "not_before window has not elapsed"
     }
   ],
-  "status": "awaiting_verifier_run",
+  "status": "waiting_for_recheck",
   "final_receipt_ref": null
 }
