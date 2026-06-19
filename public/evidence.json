@@ -49,8 +49,18 @@
       "run_after": "2026-06-19T18:46:00.000Z",
       "blocks_acceptance": true,
       "reason": "not_before window has not elapsed"
+    },
+    {
+      "kind": "post_window_recheck",
+      "checked_at": "2026-06-19T18:46:19.244Z",
+      "response_date": "Fri, 19 Jun 2026 18:46:19 GMT",
+      "url": "https://raw.githubusercontent.com/jaasieldelgado131/frantic-delayed-verifier-proof/main/public/artifact.json",
+      "http_status": 200,
+      "passed": true,
+      "status": "passed",
+      "run_after": "2026-06-19T18:46:00.000Z"
     }
   ],
-  "status": "waiting_for_recheck",
+  "status": "recheck_passed_pending_receipt",
   "final_receipt_ref": null
 }
