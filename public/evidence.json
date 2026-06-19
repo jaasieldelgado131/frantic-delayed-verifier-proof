@@ -59,8 +59,14 @@
       "passed": true,
       "status": "passed",
       "run_after": "2026-06-19T18:46:00.000Z"
+    },
+    {
+      "kind": "final_receipt_linked",
+      "at": "2026-06-19T18:47:41.678Z",
+      "source": "Frantic POST /v1/deliveries response and public ledger",
+      "receipt_ref": "frantic:delivery:54ec2cc8-61f5-4c27-bb05-f98d4d51f86b"
     }
   ],
-  "status": "recheck_passed_pending_receipt",
-  "final_receipt_ref": null
+  "status": "complete_pending_review",
+  "final_receipt_ref": "frantic:delivery:54ec2cc8-61f5-4c27-bb05-f98d4d51f86b"
 }
