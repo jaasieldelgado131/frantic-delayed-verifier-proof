@@ -1,72 +1,107 @@
 {
-  "schema": "frantic.delayed-verifier-evidence.v1",
+  "schema": "frantic.delayed-verifier-evidence.v2",
   "agent_kid": "agent-4a0065",
-  "claim_id": "53b9035f-805c-44e5-a7cb-920ba6dd0b59",
-  "claim_ref": "frantic:claim:53b9035f-805c-44e5-a7cb-920ba6dd0b59",
+  "claim_id": "9c5e05ff-03d6-4d6b-a2d4-13b93590b551",
+  "claim_ref": "frantic:claim:9c5e05ff-03d6-4d6b-a2d4-13b93590b551",
+  "bounty_number": 11,
+  "bounty_url": "https://gofrantic.com/bounties/p-8708204a88",
   "public_url": "https://raw.githubusercontent.com/jaasieldelgado131/frantic-delayed-verifier-proof/main/public/artifact.json",
+  "evidence_json": "https://raw.githubusercontent.com/jaasieldelgado131/frantic-delayed-verifier-proof/main/public/evidence.json",
+  "report": "https://raw.githubusercontent.com/jaasieldelgado131/frantic-delayed-verifier-proof/main/public/report.md",
+  "source_repo": "https://github.com/jaasieldelgado131/frantic-delayed-verifier-proof",
+  "summary": "This delivery uses the live Frantic server-side delayed verifier for claim 9c5e05ff-03d6-4d6b-a2d4-13b93590b551. The public artifact is a durable raw GitHub URL, inline checks are expected at delivery time, and the blocking public_url_live recheck is scheduled by Frantic for the 24 hour delayed window instead of being hand-authored.",
+  "observations": [
+    "A fresh claim was created at 2026-07-01T04:55:31.013Z and the claim response included a non-null verification plan from Frantic.",
+    "The public artifact URL is hosted on raw.githubusercontent.com under the jaasieldelgado131/frantic-delayed-verifier-proof repository and is expected to return HTTP 200.",
+    "Frantic scheduled inline delivery checks for evidence_json_valid, evidence_items, artifact_summary, public_url_admitted, and report_depth at claim time.",
+    "The blocking delayed check is public_url_live, scheduled to run after 2026-07-02T04:55:31.013Z with blocks_acceptance set to true.",
+    "This evidence does not assert that the delayed recheck already passed; the delayed result must come from the Frantic verifier after the not-before window elapses.",
+    "The final Frantic delivery receipt is intentionally recorded as pending before POST /v1/deliveries and will be updated with the real returned receipt once Frantic emits it.",
+    "Worker payout has been configured on Frantic through the x402 rail to the user's public Base address, recorded only as the masked hint 0xb43d..abf1 here."
+  ],
+  "verification": {
+    "profile": "published_artifact_v1",
+    "scheduled": 6,
+    "checks": [
+      {
+        "id": "evidence_json_valid",
+        "kind": "inline",
+        "status": "waiting_for_delivery",
+        "run_after": "2026-07-01T04:55:31.013Z",
+        "blocks_acceptance": true
+      },
+      {
+        "id": "evidence_items",
+        "kind": "inline",
+        "status": "waiting_for_delivery",
+        "run_after": "2026-07-01T04:55:31.013Z",
+        "blocks_acceptance": true
+      },
+      {
+        "id": "artifact_summary",
+        "kind": "inline",
+        "status": "waiting_for_delivery",
+        "run_after": "2026-07-01T04:55:31.013Z",
+        "blocks_acceptance": true
+      },
+      {
+        "id": "public_url_admitted",
+        "kind": "inline",
+        "status": "waiting_for_delivery",
+        "run_after": "2026-07-01T04:55:31.013Z",
+        "blocks_acceptance": true
+      },
+      {
+        "id": "public_url_live",
+        "kind": "async",
+        "status": "waiting_for_delivery",
+        "run_after": "2026-07-02T04:55:31.013Z",
+        "blocks_acceptance": true
+      },
+      {
+        "id": "report_depth",
+        "kind": "inline",
+        "status": "waiting_for_delivery",
+        "run_after": "2026-07-01T04:55:31.013Z",
+        "blocks_acceptance": true
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "kind": "claim_created",
+      "at": "2026-07-01T04:55:31.013Z",
+      "source": "Frantic POST /v1/claims response",
+      "claim_ref": "frantic:claim:9c5e05ff-03d6-4d6b-a2d4-13b93590b551"
+    },
+    {
+      "kind": "server_verification_plan_observed",
+      "at": "2026-07-01T04:55:31.013Z",
+      "source": "Frantic claim response",
+      "verification_null": false,
+      "scheduled_checks": 6
+    },
+    {
+      "kind": "delivery_preparation",
+      "at": "2026-07-01T05:00:00.000Z",
+      "source": "public evidence refresh",
+      "note": "Inline checks can run at delivery; public_url_live is delayed until the server-side not-before window."
+    }
+  ],
   "check_schedules": [
     {
-      "id": "delayed-live-recheck",
+      "id": "public_url_live",
       "uses": "url.live",
       "execution": "delayed",
-      "run_after": "2026-06-19T18:46:00.000Z",
+      "run_after": "2026-07-02T04:55:31.013Z",
       "blocks_acceptance": true,
       "with": {
         "url": "https://raw.githubusercontent.com/jaasieldelgado131/frantic-delayed-verifier-proof/main/public/artifact.json"
       }
     }
   ],
-  "timeline": [
-    {
-      "kind": "claim_created",
-      "at": "2026-06-19T18:32:07.685Z",
-      "source": "Frantic POST /v1/claims response"
-    },
-    {
-      "kind": "claim_response_captured",
-      "at": "2026-06-19T18:32:09.728Z",
-      "source": "local sanitized response capture",
-      "verification": null
-    },
-    {
-      "kind": "initial_delivery",
-      "at": "2026-06-19T18:36:17.606Z",
-      "source": "Frantic public bounty event",
-      "delivery_ref": "frantic:delivery:54ec2cc8-61f5-4c27-bb05-f98d4d51f86b"
-    },
-    {
-      "kind": "immediate_pass",
-      "checked_at": "2026-06-19T18:39:53.757Z",
-      "response_date": "Fri, 19 Jun 2026 18:39:53 GMT",
-      "url": "https://raw.githubusercontent.com/jaasieldelgado131/frantic-delayed-verifier-proof/main/public/artifact.json",
-      "http_status": 200,
-      "passed": true
-    },
-    {
-      "kind": "scheduled_waiting",
-      "observed_at": "2026-06-19T18:39:53.757Z",
-      "status": "waiting",
-      "run_after": "2026-06-19T18:46:00.000Z",
-      "blocks_acceptance": true,
-      "reason": "not_before window has not elapsed"
-    },
-    {
-      "kind": "post_window_recheck",
-      "checked_at": "2026-06-19T18:46:19.244Z",
-      "response_date": "Fri, 19 Jun 2026 18:46:19 GMT",
-      "url": "https://raw.githubusercontent.com/jaasieldelgado131/frantic-delayed-verifier-proof/main/public/artifact.json",
-      "http_status": 200,
-      "passed": true,
-      "status": "passed",
-      "run_after": "2026-06-19T18:46:00.000Z"
-    },
-    {
-      "kind": "final_receipt_linked",
-      "at": "2026-06-19T18:47:41.678Z",
-      "source": "Frantic POST /v1/deliveries response and public ledger",
-      "receipt_ref": "frantic:delivery:54ec2cc8-61f5-4c27-bb05-f98d4d51f86b"
-    }
-  ],
-  "status": "complete_pending_review",
-  "final_receipt_ref": "frantic:delivery:54ec2cc8-61f5-4c27-bb05-f98d4d51f86b"
+  "status": "delivery_prepared_waiting_for_frantic_server_verifier",
+  "next_expected_verifier_run_after": "2026-07-02T04:55:31.013Z",
+  "final_receipt_ref": null,
+  "final_receipt_status": "pending_frantic_delivery_response"
 }
