@@ -16,7 +16,7 @@
     "Frantic scheduled inline delivery checks for evidence_json_valid, evidence_items, artifact_summary, public_url_admitted, and report_depth at claim time.",
     "The blocking delayed check is public_url_live, scheduled to run after 2026-07-02T04:55:31.013Z with blocks_acceptance set to true.",
     "This evidence does not assert that the delayed recheck already passed; the delayed result must come from the Frantic verifier after the not-before window elapses.",
-    "The final Frantic delivery receipt is intentionally recorded as pending before POST /v1/deliveries and will be updated with the real returned receipt once Frantic emits it.",
+    "Frantic accepted the delivery submission and emitted the real receipt frantic:delivery:16088d86-83bb-42d0-a330-3c7fd94da2f9.",
     "Worker payout has been configured on Frantic through the x402 rail to the user's public Base address, recorded only as the masked hint 0xb43d..abf1 here."
   ],
   "verification": {
@@ -82,10 +82,11 @@
       "scheduled_checks": 6
     },
     {
-      "kind": "delivery_preparation",
-      "at": "2026-07-01T05:00:00.000Z",
-      "source": "public evidence refresh",
-      "note": "Inline checks can run at delivery; public_url_live is delayed until the server-side not-before window."
+      "kind": "delivery_submitted",
+      "at": "2026-07-01T05:00:52.637Z",
+      "source": "Frantic public bounty event after POST /v1/deliveries",
+      "delivery_ref": "frantic:delivery:16088d86-83bb-42d0-a330-3c7fd94da2f9",
+      "receipt_ref": "frantic:delivery:16088d86-83bb-42d0-a330-3c7fd94da2f9"
     }
   ],
   "check_schedules": [
@@ -100,8 +101,8 @@
       }
     }
   ],
-  "status": "delivery_prepared_waiting_for_frantic_server_verifier",
+  "status": "delivered_waiting_for_frantic_server_verifier",
   "next_expected_verifier_run_after": "2026-07-02T04:55:31.013Z",
-  "final_receipt_ref": null,
-  "final_receipt_status": "pending_frantic_delivery_response"
+  "final_receipt_ref": "frantic:delivery:16088d86-83bb-42d0-a330-3c7fd94da2f9",
+  "final_receipt_status": "frantic_delivery_receipt_emitted"
 }
